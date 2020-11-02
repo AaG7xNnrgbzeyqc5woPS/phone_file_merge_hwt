@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Delphi正则表达式使用方法（TPerlRegEx） - FreeSpider - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=8F6jO9aWZhOryqKsIFGUkSbXpyPVKDwgWwvpie3eJis1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/arrow/bundle-arrow.css?v=pAFc9CTjQ3X6S6IlkhC7h-AHdfI56xopjvGTJOuYoNg1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/freespider/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/freespider/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/freespider/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'freespider', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=ceHMEpeJXcR_f7TCJnXeZQRG1UsC0_cpwDJRs_oVInY1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/freespider/">FreeSpider</a><br>
+		
+	</div>
+</div>
+
+</div>
+<div id="mylinks">
+<!--done-->
+<a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/freespider/">首页</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/FreeSpider">联系</a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/freespider/rss">订阅</a><a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/freespider/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>&nbsp;&nbsp;&nbsp;
+<a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a>
+</div>
+<div id="mytopmenu">
+	
+		
+<div class="blogStats">随笔 - 268&nbsp;
+文章 - 0&nbsp;评论 - 31&nbsp;trackbacks - 0
+</div>
+	
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script><br>
+			
+<!--done-->
+<div class="newsItem">
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script></DIV>		
+	
+</div>
+<div id="centercontent">
+	
+<div id="post_detail">
+<!--done-->
+<div class = "post">
+	<div class = "postTitle">
+		<h1><a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/freespider/archive/2009/12/24/1631404.html">Delphi正则表达式使用方法（TPerlRegEx）</a></h1>
+	</div>
+	<div id="cnblogs_post_body"><table style="width: 0px;" align="right" border="0">
+<tbody>
+<tr>
+<td><span id="cha">&nbsp;</span></td>
+</tr>
+</tbody>
+</table>
+<p>目前主流的delphi下的正则表达式，应该是&nbsp;PerlRegEx&nbsp;。&nbsp;&nbsp; </p>
+<p>&nbsp; &nbsp; 官方网站:&nbsp;<a href="http://www.regular-expressions.info/delphi.html" target="_blank">http://www.regular-expressions.info/delphi.html</a><br />&nbsp;&nbsp;&nbsp;&nbsp;直接下载:&nbsp;<a href="http://www.regular-expressions.info/download/TPerlRegEx.zip" target="_blank">http://www.regular-expressions.info/download/TPerlRegEx.zip</a>&nbsp;&nbsp;&nbsp; </p>
+<p>安装方法（我使用的delphi版本是&nbsp;delphi2007）:</p>
+<p>1、先把解压的&nbsp;TPerlRegEx&nbsp;文件夹放在&nbsp;Delphi&nbsp;的根目录下的&nbsp;Imports&nbsp;目录中。</p>
+<p>2、目前最新&nbsp;For&nbsp;Win32&nbsp;的版本是可以在&nbsp;Delphi7，Delphi&nbsp;2006，Delphi&nbsp;2007，Delphi&nbsp;2009&nbsp;下使用。 </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 我用的是2007，于是就打开了PerlRegExD2007.dpk&nbsp;，在&nbsp;Project&nbsp;Manager&nbsp;窗口中的&nbsp;PerlRegExD2007.bpl&nbsp;上点击右键，执行&nbsp;Install。这时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 在&nbsp;Tool&nbsp;Palette&nbsp;的列表中已经有了&nbsp;TPerlRegEx，在&nbsp;JGsoft&nbsp;组。</p>
+<p>3、Tools&nbsp;-&gt;&nbsp;Options&nbsp;-&gt;&nbsp;Environment&nbsp;Options&nbsp;-&gt;&nbsp;Delphi&nbsp;Options&nbsp;-&gt;&nbsp;Library-Win32&nbsp;-&gt;&nbsp;Library&nbsp;path&nbsp;-&gt;</p>
+<p>&nbsp; &nbsp; 添加路径：$(BDS)\Imports\TPerlRegEx&nbsp;（注：就是刚才放置的路径）。</p>
+<p>4、打开delphi根目录下&nbsp;Imports\TPerlRegEx\pcre&nbsp;，把&nbsp;pcre3.dll&nbsp;文件复制到&nbsp;C:\WINDOWS\system32&nbsp;文件夹下，这个文件夹里是windows系统存放&nbsp;dll&nbsp;文 </p>
+<p>&nbsp;&nbsp;&nbsp; 件的大本营。如果不复制pcre3.dll，在应用&nbsp;TPerlRegEx&nbsp;正则的时候，系统提示出错。</p>
+<p>5、用delphi打开&nbsp;Imports\TPerlRegEx&nbsp;目录下的&nbsp;pcre.pas&nbsp;文件，找到&nbsp;//{$DEFINE&nbsp;PCRE_STATICLINK}&nbsp;，把之前的注释&nbsp;//&nbsp;删除；找</p>
+<p>&nbsp;&nbsp;&nbsp; 到&nbsp;{$DEFINE&nbsp;PCRE_LINKDLL}&nbsp;，把它注释掉，即改为&nbsp;//{$DEFINE&nbsp;PCRE_LINKDLL}&nbsp;。注意：这点非常重要，如果不这样改的话，在软件开发完成后，分</p>
+<p>&nbsp;&nbsp;&nbsp; 发到其他电脑上的时候，软件就会提示&ldquo;缺少pcre3.dll错误&rdquo;。这样修改的原因，是把正则直接封包到&nbsp;exe&nbsp;文件里，而不需要链接&nbsp;pcre3.dll&nbsp;了；封包进&nbsp;exe，付</p>
+<p>&nbsp;&nbsp;&nbsp; 出的代价是软件增大了&nbsp;100KB&nbsp;左右的大小，当然比起必须携带&nbsp;pcre3.dll来说，这是有意义的付出。 </p>
+<p>
+6、可以使用了!&nbsp;直接&nbsp;uses&nbsp;PerlRegEx&nbsp;或从&nbsp;Tool&nbsp;Palette&nbsp;添加都可以。 TPerlRegEx&nbsp;安装设置完成后，就可以舒心地使用了，一些简单的使用方法如下： </p>
+<p>&nbsp;</p>
+<div id="yy"><span style="color: #339966;">//查找是否存在</span><br />var<br />&nbsp;&nbsp;reg:&nbsp;TPerlRegEx;<br />begin<br />&nbsp;&nbsp;reg&nbsp;:=&nbsp;TPerlRegEx.Create(nil);<br />&nbsp;&nbsp;reg.Subject&nbsp;:=&nbsp;'CodeGear&nbsp;Delphi&nbsp;2007&nbsp;for&nbsp;Win32';<br />&nbsp;&nbsp;reg.RegEx&nbsp;&nbsp;&nbsp;:=&nbsp;'\d';<br />&nbsp;&nbsp;if&nbsp;reg.Match&nbsp;then<br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage('找到了')<br />&nbsp;&nbsp;else<br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage('没找到');<br />&nbsp;&nbsp;FreeAndNil(reg);<br />end;</div>
+<div id="yy"><span style="color: #339966;">//替换一般字符串</span><br />var<br />reg:&nbsp;TPerlRegEx;<br />begin<br />reg&nbsp;:=&nbsp;TPerlRegEx.Create(nil);<br />reg.Subject&nbsp;:=&nbsp;'我爱DELPHI,&nbsp;但Delphi不爱我!';<br />reg.RegEx&nbsp;&nbsp;&nbsp;:=&nbsp;'Delphi';<br />reg.Replacement&nbsp;:=&nbsp;'◆';<br />reg.ReplaceAll;<br />ShowMessage(reg.Subject);<span style="color: #339966;">&nbsp;//返回:&nbsp;我爱DELPHI,&nbsp;但◆不爱我!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />FreeAndNil(reg);<br />end;</div>
+<div id="yy"><span style="color: #339966;">//分别显示找到的每一个和总数</span><br />var<br />&nbsp;&nbsp;reg:&nbsp;TPerlRegEx;<br />&nbsp;&nbsp;num:&nbsp;Integer;<span style="color: #339966;">&nbsp;//用&nbsp;num&nbsp;来计数</span><br />begin<br />&nbsp;&nbsp;reg&nbsp;:=&nbsp;TPerlRegEx.Create(nil);&nbsp;&nbsp;reg.Subject&nbsp;:=&nbsp;'CodeGear&nbsp;Delphi&nbsp;2007&nbsp;for&nbsp;Win32';<br />&nbsp;&nbsp;reg.RegEx&nbsp;&nbsp;&nbsp;:=&nbsp;'\d';&nbsp;&nbsp;num&nbsp;:=&nbsp;0;<br />&nbsp;&nbsp;while&nbsp;reg.MatchAgain&nbsp;do&nbsp;&nbsp;<span style="color: #339966;">//MatchAgain&nbsp;是下一个</span><br />&nbsp;&nbsp;begin<br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(reg.MatchedExpression);<span style="color: #339966;">&nbsp;//将分别显示:&nbsp;2&nbsp;0&nbsp;0&nbsp;7&nbsp;3&nbsp;2</span><br />&nbsp;&nbsp;&nbsp;&nbsp;Inc(num);<br />&nbsp;&nbsp;end;<br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(num));&nbsp;<span style="color: #339966;">//6&nbsp;&nbsp;FreeAndNil(reg);</span><br />end;</div>
+<div id="yy"><span style="color: #339966;">//目标字符串的位置与长度</span><br />var<br />&nbsp;&nbsp;reg:&nbsp;TPerlRegEx;<br />begin<br />&nbsp;&nbsp;reg&nbsp;:=&nbsp;TPerlRegEx.Create(nil);&nbsp;&nbsp;reg.Subject&nbsp;:=&nbsp;'CodeGear&nbsp;Delphi&nbsp;2007&nbsp;for&nbsp;Win32';<br />&nbsp;&nbsp;reg.RegEx&nbsp;&nbsp;&nbsp;:=&nbsp;'Delphi';&nbsp;&nbsp;while&nbsp;reg.MatchAgain&nbsp;do&nbsp;<span style="color: #339966;">&nbsp;//很明显:&nbsp;本例只能找到一个结果</span><br />&nbsp;&nbsp;begin<br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(reg.MatchedExpression);&nbsp;<span style="color: #339966;">//找到的字符串:&nbsp;Delphi</span><br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(reg.MatchedExpressionOffset));<span style="color: #339966;">&nbsp;//它所在的位置:&nbsp;10</span><br />&nbsp;&nbsp;&nbsp;&nbsp;ShowMessage(IntToStr(reg.MatchedExpressionLength));&nbsp;<span style="color: #339966;">//它的长度:&nbsp;6</span><br />&nbsp;&nbsp;end;&nbsp;&nbsp;FreeAndNil(reg);<br />end;<br />
+<p><span style="color: #339966;">// Matchedexpression_r 与Subexpression_rs[0]</span><b><br /></b>var<br />reg: TPerlRegEx;<br />begin<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.Subject := 'CodeGear Delphi 2007';<br />reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> := 'Delphi';</p>
+<p>while reg.MatchAgain do<br />begin<br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>ShowMessage(reg.Matchedexpression_r); <span style="color: #339966;">//Delphi; 这是匹配到的内容</span><br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>ShowMessage(reg.Subexpression_rs[0]);<span style="color: #339966;"> //Delphi; 也可以这样显示匹配到的内容</span><br />end;<br /><span style="color: #339966;">{<br />Subexpression_rs 是一个数组:<br />Subexpression_rs[1] 储存第 1 个表达式匹配的内容;<br />Subexpression_rs[2] 储存第 2 个表达式匹配的内容;<br />Subexpression_rs[n] 储存第 n 个表达式匹配的内容;</span></p>
+<p><span style="color: #339966;">Subexpression_rs[0] 储存整个表达式匹配的内容;</span></p>
+<p><span style="color: #339966;">Matchedexpression_r 表示的不过是 Subexpression_rs[0].<br />}</span></p>
+<p>FreeAndNil(reg);<br />end;</p>
+<p><span style="color: #339966;">//提取子表达式匹配到的内容</span><br />var<br />reg: TPerlRegEx;<br />begin<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.Subject := 'abc A1111 BB222 CCC33 DDDD4';<br />reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> :='\b([A-D]+)([1-4]+)\b'; <span style="color: #339966;">//这个表达式有两个子表达式构成</span></p>
+<p>while reg.MatchAgain do<br />begin<br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>ShowMessage(reg.Subexpression_rs[0]); <span style="color: #339966;">//将分别显示: A1111 BB222 CCC33DDDD4</span><br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>ShowMessage(reg.Subexpression_rs[1]); <span style="color: #339966;">//将分别显示: A BB CCC DDDD</span><br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>ShowMessage(reg.Subexpression_rs[2]); <span style="color: #339966;">//将分别显示: 1111 222 33 4</span></p>
+<p><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">{另外:<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">reg.Subexpression_rCount&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">是子表达式的个数;<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">reg.Subexpression_rLengths[n] 是第 n 个表达式返回的字符串的长度;<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">reg.Subexpression_rOffsets[n] 是第 n 个表达式返回的字符串在源字符串中的位置<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;"> }</span><br />end;</p>
+<p>FreeAndNil(reg);<br />end;</p>
+<p><span style="color: #339966;">//子表达式不能超过 MAX_SUBexpression_rS = 99 个, MAX_SUBexpression_rS 是TPerlRegEx 的内置常数.</span></p>
+<p><span style="color: #339966;">//设定搜索范围: Start、Stop</span><br />var<br />reg: TPerlRegEx;<br />begin<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.Subject := 'ababab';<br />reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> := 'ab';<br />reg.Replacement := '◆';</p>
+<p>reg.Start := 1;<br />reg.Stop := 2;<br />while reg.MatchAgain do<br />begin<br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>reg.Replace;<br />end;<br />ShowMessage(reg.Subject); <span style="color: #339966;">//返回: ◆abab</span></p>
+<p><br />reg.Subject := 'ababab';<br />reg.Start := 3;<br />reg.Stop := 4;<br />while reg.MatchAgain do<br />begin<br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>reg.Replace;<br />end;<br />ShowMessage(reg.Subject); <span style="color: #339966;">//返回: ab◆ab</span></p>
+<p><br />reg.Subject := 'ababab';<br />reg.Start := 5;<br />reg.Stop := 6;<br />while reg.MatchAgain do<br />begin<br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>reg.Replace;<br />end;<br />ShowMessage(reg.Subject); <span style="color: #339966;">//返回: abab◆</span></p>
+<p>FreeAndNil(reg);<br />end;<br /><b><br /></b><span style="color: #339966;">// Replace</span><br />var<br />reg: TPerlRegEx;<br />begin<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> := 'ab';<br />reg.Replacement := '◆';</p>
+<p>reg.Subject := 'ababab';<br />reg.ReplaceAll;<br />ShowMessage(reg.Subject); <span style="color: #339966;">//返回: ◆◆◆</span></p>
+<p><br />reg.Subject := 'ababab';<br /><span style="color: #339966;">//下面四行程序, 相当于 reg.ReplaceAll;</span><br />while reg.MatchAgain do<br />begin<br />&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>&nbsp;<wbr></wbr>reg.Replace;<br />end;</p>
+<p>ShowMessage(reg.Subject); <span style="color: #339966;">//返回: ◆◆◆</span></p>
+<p>FreeAndNil(reg);<br />end;<br /><span style="color: #339966;">{<br />ReplaceAll 函数返回的是 Boolean;<br />Replace 函数返回的是 Replacement 的值, 当然是不能赋值的, 它仅仅是返回值.<br />}<br /></span><br /><span style="color: #339966;">// Compile、Study</span><br />var<br />reg: TPerlRegEx;<br />begin<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> := 'ab';<br />reg.Options := [preCaseLess];<br />reg.Compile; <span style="color: #339966;">{编译表达式}</span><br />reg.Study; <span style="color: #339966;">{Study 方法会检查是否编译, 如果没有编译则执行 Compile}</span></p>
+<p>reg.Replacement := '◆';<br />reg.Subject := 'abAbaB';</p>
+<p>reg.ReplaceAll;<br />ShowMessage(reg.Subject); <span style="color: #339966;">{返回: ◆◆◆}</span></p>
+<p>FreeAndNil(reg);<br />end;</p>
+<p><span style="color: #339966;">{<br />编译表达式, 会加快执行速度、降低启动速度;<br />如果表达式比较复杂而又多次执行, 应该先编译;<br />编译内容包括表达式选项.<br />}</span></p>
+<p><span style="color: #339966;">// EscapeRegExChars 函数可以自动为特殊字符加转义符号 \</span><br />var<br />reg: TPerlRegEx;<br />begin<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.Subject := 'C++Builer';<br />reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> :=reg.EscapeRegExChars('C+') + '{2}'; <span style="color: #339966;">{相当于 'C\+{2}'}</span><br />reg.Replacement := '◆';<br />reg.ReplaceAll;</p>
+<p>ShowMessage(reg.Subject); <span style="color: #339966;">{返回: ◆Builer}</span></p>
+<p>FreeAndNil(reg);<br />end;</p>
+<p><span style="color: #339966;">//字符串分割: Split</span><br />var<br />reg: TPerlRegEx;<br />List: TStrings;<br />begin<br />List := TStringList.Create;<br />reg := TPerlRegEx.Create(nil);</p>
+<p>reg.Subject := 'aaa,bbb,ccc,ddd';<br />reg.RegEx&nbsp;<wbr></wbr>&nbsp;<wbr></wbr> := ',';<span style="color: #339966;">{这里可是运行相当复杂的分割符啊}</span></p>
+<p>reg.Split(List,MaxInt); <span style="color: #339966;">{第一个参数读入的是 Subject; 第二个参数是分成多少份}</span><br /><span style="color: #339966;">{ 输入一个最大整数, 表示能分多少就分多少}</span></p>
+<p>ShowMessage(List.Text);<br /><span style="color: #339966;">{返回:<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;"> aaa<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;"> bbb<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;"> ccc<br />&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;">&nbsp;</span><wbr></wbr><span style="color: #339966;"> ddd<br />}</span></p>
+<p>FreeAndNil(reg);<br />List.Free;<br />end;</p>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+	<div class = "postDesc">posted on <span id="post-date">2009-12-24 14:19</span> <a href='http://www.cnblogs.com/freespider/'>FreeSpider</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=1631404" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1631404);return false;">收藏</a></div>
+</div>
+<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=64508,cb_entryId=1631404,cb_blogApp=currentBlogApp,cb_blogUserGuid='9c2926fb-e0ed-de11-ba8f-001cf0cd104b',cb_entryCreatedDate='2009/12/24 14:19:00';loadViewCount(cb_entryId);</script>
+
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='ad_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<div id='ad_c2' class='c_ad_block'></div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+$(function () {
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);    
+});
+</script>
+</div>
+
+
+	
+<!--done-->
+<div class="footer">
+	
+	Copyright &copy;2016 FreeSpider Powered by: <a href="http://www.cnblogs.com" class=footerlink>博客园</a> 模板提供：<a href="http://blog.hjenglish.com" class=footerlink>沪江博客</a><br>
+</div>
+</div>
+
+
+
+</body>
+</html>
