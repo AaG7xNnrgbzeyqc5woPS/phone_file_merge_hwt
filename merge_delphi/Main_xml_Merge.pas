@@ -1,0 +1,149 @@
+unit Main_xml_Merge;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, ExtCtrls, ComCtrls;
+
+type
+  TForm_xml_zip = class(TForm)
+    mm1: TMainMenu;
+    About1: TMenuItem;
+    Merge1: TMenuItem;
+    LoadXML1: TMenuItem;
+    btn_open_xml: TButton;
+    lbl_xml: TLabel;
+    dlgOpen1: TOpenDialog;
+    edt_xml_configue: TEdit;
+    lbl1: TLabel;
+    edt_outputfile: TEdit;
+    btn_open_output: TButton;
+    btn_merge_begin: TButton;
+    rg_chip: TRadioGroup;
+    pb_FileProcess: TProgressBar;
+    pb_dataProcess: TProgressBar;
+    lbl_patch: TLabel;
+    edt_Patch: TEdit;
+    btn_Open_patch: TButton;
+    procedure btn_open_outputClick(Sender: TObject);
+    procedure btn_open_xmlClick(Sender: TObject);
+    procedure btn_merge_beginClick(Sender: TObject);
+    procedure btn_Open_patchClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+//    procedure Merge(inputxml: string; outputbin: string; DiskSizeInBytes: Int64);
+    procedure update_fileProcessbar(count, total : int64);
+    procedure update_dataProcessbar(count, total : int64);
+    procedure Do_MergeComplete(Sender: TObject);
+  public
+    { Public declarations }
+//    procedure DoMerge;
+  end;
+
+var
+  Form_xml_zip: TForm_xml_zip;
+
+implementation
+
+uses
+  Unit_FileCheck, Unit_xml, unit_DoMergeThread, Unit_Patch;
+
+{$R *.dfm}
+
+procedure TForm_xml_zip.btn_open_outputClick(Sender: TObject);
+begin
+  dlgOpen1.Filter := '';
+  if  dlgOpen1.Execute then
+  begin
+    //out_fs := dlgOpen1.FileName;
+    edt_outputfile.Text := dlgOpen1.FileName
+  end;
+end;
+
+procedure TForm_xml_zip.btn_open_xmlClick(Sender: TObject);
+begin
+  dlgOpen1.Filter := '*.xml|*.xml';
+  if  dlgOpen1.Execute then
+  begin
+    edt_xml_configue.Text := dlgOpen1.FileName;
+  end;
+
+end;
+
+procedure TForm_xml_zip.update_fileProcessbar(count, total : int64);
+begin
+    pb_FileProcess.Position := Round((count / total) * 100);
+    //application.ProcessMessages; //这个好用，效果不错
+    // application.HandleMessage不好用，会等待消息，很慢的
+
+end;
+
+procedure TForm_xml_zip.update_dataProcessbar(count, total : int64);
+begin
+  pb_dataProcess.Position := Round((count / total) * 100);
+  //application.ProcessMessages;
+
+end;
+
+procedure TForm_xml_zip.Do_MergeComplete(Sender: TObject);
+begin
+  //ShowMessage('文件合并完成！');
+  ShowMessage('Merge Completed！');
+end;
+
+
+procedure TForm_xml_zip.btn_merge_beginClick(Sender: TObject);
+var
+   inputxml: string;
+   patchxml : string;
+   outputbin: string;
+   DiskSizeInBytes: Int64;
+
+   FileDir: string;
+begin
+  if rg_chip.ItemIndex >= 0 then
+  begin
+    DiskSizeInBytes := 4 * int64(1024*1024*1024); //4G
+    DiskSizeInBytes := DiskSizeInBytes shl rg_chip.ItemIndex;
+  end
+  else raise Exception.Create('请选择芯片容量');
+
+
+  if  (Length(edt_xml_configue.Text) > 0) and  (Length(edt_outputfile.Text) > 0)
+    and (rg_chip.ItemIndex >= 0) then
+  begin
+    patchxml  := trim(edt_Patch.Text);
+    inputxml  := trim(edt_xml_configue.Text);
+    outputbin := trim(edt_outputfile.Text);
+
+    FileDir := ExtractFileDir(inputxml);
+    //ShowMessage(FileDir);
+    SetCurrentDirectory(PChar(FileDir));     //GetCurrentDirectory //Application.ExeName
+
+    //-----------------------------------------------
+
+    ExecuteInThread(nil,inputxml,patchxml, outputbin, DiskSizeInBytes,update_dataProcessbar,update_fileProcessbar, Do_MergeComplete);
+  end
+  else raise Exception.Create('请选择输入输出文件！');
+
+end;
+
+procedure TForm_xml_zip.btn_Open_patchClick(Sender: TObject);
+begin
+  dlgOpen1.Filter := '*.xml|*.xml';
+  if  dlgOpen1.Execute then
+  begin
+    edt_Patch.Text := dlgOpen1.FileName;
+  end;
+
+
+end;
+
+procedure TForm_xml_zip.FormCreate(Sender: TObject);
+begin
+  Caption := 'EMMC Merge utility Ver 2.04  2016-5-7';
+end;
+
+end.
